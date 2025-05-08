@@ -1,0 +1,9 @@
+.tableContainer {
+    max-height: 70vh; /* Limit table height to avoid taking full page */
+    overflow: auto; /* Enable scroll within the table container */
+    border: 1px solid #ddd;
+  }
+  
+  .tableContainer table {
+    width: 100%;
+  }
