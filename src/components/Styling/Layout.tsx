@@ -30,13 +30,12 @@ export const Layout = ({ children }: LayoutProps) => {
       {/* Sidebar */}
       <div
         className={`transition-all duration-300 overflow-hidden bg-zinc-200 text-black border-r border-white ${
-          isSidebarOpen ? "w-40" : "w-12"
+          isSidebarOpen ? "w-64" : "w-20"
         }`}
       >
         <Sidebar
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
-          activeSubmenu={activeSubmenu}
           toggleContactSubmenu={toggleContactSubmenu}
           toggleEducationSubmenu={toggleEducationSubmenu}
           isContactSubmenuOpen={activeSubmenu === 'contact'} 
@@ -50,7 +49,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <Navbar />
 
         {/* Main content */}
-        <div className={`h-screen flex-1 ${styles.scrollableContent}`}>
+        <div className={`flex-1 ${styles.scrollableContent}`}>
           {children}
         </div>
 

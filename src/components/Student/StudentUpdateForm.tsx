@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Layout } from "../Layout";
+import { Layout } from "../Styling/Layout";
 
 type StudentForm = {
   _id: string;

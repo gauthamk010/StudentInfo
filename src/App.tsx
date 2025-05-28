@@ -1,7 +1,7 @@
 //App.tsx
 import { BrowserRouter} from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
-import { PrivateRoute} from './components/PrivateRoute'
+import { PrivateRoute} from './components/Authentication/PrivateRoute'
 import { Home } from './components/Home'
 import { StudentRegistrationForm } from './components/Student/StudentRegistrationForm'
 import { LandingPage } from './components/LandingPage'
@@ -14,10 +14,11 @@ import { StudentExternalContactDetails } from './components/Student/StudentExter
 import { StudentUpdate } from './components/Student/StudentUpdate'
 import { StudentDelete } from './components/Student/StudentDelete'
 import { StudentHighSchoolTable } from './components/Student/StudentHighSchool'
-import { SignUp } from './components/SignUp'
 import { StudentDetailsAllTable } from './components/Student/StudentDetailsAll'
-import './App.css'
 import { StudentUpdateForm } from './components/Student/StudentUpdateForm'
+import { Login } from './components/Authentication/Login'
+import './App.css'
+import { Register } from './components/Authentication/Register'
 
 function App() {
 
@@ -28,8 +29,8 @@ function App() {
           <Routes>
 
             <Route path="*" element={<Home />}></Route>
-            <Route path="/login" element={<Home />}></Route>
-            <Route path="/signup" element={<SignUp/>}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register/>}></Route>
 
             <Route element={<PrivateRoute />}>
   

@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
-
-export const SignUp = () => {
+0
+export const SignUpSuccess = () => {
     const location = useLocation();
     const { email, password } = location.state || {};
 

@@ -4,7 +4,7 @@
 import axios from "axios";
 import { useForm, FieldErrors } from "react-hook-form"
 import { useNavigate } from "react-router-dom";
-import { Layout } from "../Layout";
+import { Layout } from "../Styling/Layout";
 
 type StudentForm = {
   firstname: string,
@@ -142,7 +142,7 @@ const onError = (errors: FieldErrors<StudentForm>) => {
         <h1 className='text-3xl text-center text-stone-800 font-bold m-2 underline pt-3'>Registration Form</h1>
         <p className="text-md text-stone-800 text-center m-1 pt-2 italic">Please fill in all the fields correctly.</p>
 
-        <div className='w-4/5 h-4/5 mx-auto mt-5 p-5 bg-zinc-100 border border-2 border-lime-600 shadow-lg rounded-lg'>
+        <div className='w-4/5 h-fit mx-auto mt-5 p-5 bg-zinc-100 border border-2 border-lime-600 shadow-lg rounded-lg'>
             <form onSubmit={handleSubmit(onSubmit, onError)} className="space-y-4">
         
                 {/* BIODATA */}

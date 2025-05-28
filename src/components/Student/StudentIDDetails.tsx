@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Layout } from '../Layout';
+import { Layout } from '../Styling/Layout';
 import styles from './Tabulation.module.css';
 
 type Student = {
