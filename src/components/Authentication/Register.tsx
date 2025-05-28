@@ -27,28 +27,23 @@ export const Register = () => {
                 password,
             });
 
-            // It's good practice to check for successful status codes like 201 (Created) for registration
             if (registerResponse.status === 201 || registerResponse.status === 200) {
-                const { token } = registerResponse.data; // Assuming token is sent on successful registration for auto-login
+                const { token } = registerResponse.data;
                 if (token && auth) {
                     auth.login(token);
                     alert("Registration Successful! Redirecting...");
-                    navigate("/landing"); // Or to a profile setup page, dashboard, etc.
+                    navigate("/landing");
                 } else {
-                    // Handle cases where registration is successful but no token (e.g., email verification needed)
                     alert("Registration Successful! Please check your email to verify or proceed to login.");
                     navigate("/login");
                 }
             } else {
-                // This path might not be hit if server returns error HTTP codes which go to catch block
                 setRegisterError(`Registration failed with status: ${registerResponse.status}`);
             }
-        } catch (error: any) { // Catch block for network errors or server error responses (4xx, 5xx)
+        } catch (error: any) {
             if (axios.isAxiosError(error) && error.response) {
-                // Server responded with an error status code (e.g., 400, 409, 500)
                 setRegisterError(error.response.data.message || "Registration failed. Please check your details and try again.");
             } else {
-                // Network error or other unexpected error
                 setRegisterError("Registration request failed. Please try again later.");
             }
         } finally {
@@ -63,23 +58,14 @@ export const Register = () => {
                 {/* Illustration Section */}
                 <div className="hidden md:flex md:w-1/2 lg:w-2/5 flex-col justify-center items-center">
                     <img
-                        src="/student-illust.svg" // Make sure this path is correct (from public folder)
+                        src="/student-illust.svg"
                         alt="Student illustration"
                         className="h-96 lg:h-[28rem] w-auto object-contain"
                     />
                 </div>
-
-                {/* Register Form Section (Parent of the card) */}
-                {/* This div takes up its allocated space and centers the card. */}
+                
                 <div className="w-full md:w-1/2 lg:w-3/5 flex flex-col justify-center items-center">
-                    {/* Register Form Card */}
-                    {/*
-                      MODIFIED:
-                      - `max-h-full`: Allows the card to take up to the full height of its parent
-                                      (the "Register Form Section" div).
-                      - `overflow-y-auto`: Adds a vertical scrollbar if the content inside this card
-                                           exceeds its calculated `max-h-full`.
-                    */}
+                    {/* Register Form */}
                     <div className="w-full max-w-xl bg-white rounded-lg shadow-xl p-8 max-h-full overflow-y-auto">
                         <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
                             Create Your Account
@@ -97,7 +83,7 @@ export const Register = () => {
                                     Name
                                 </label>
                                 <input
-                                    type="text" // Corrected: input type for name is "text"
+                                    type="text"
                                     id="name"
                                     placeholder="Full Name"
                                     className="w-full mt-1 p-3 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-emerald-500 focus:outline-none"

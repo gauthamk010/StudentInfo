@@ -36,7 +36,7 @@ export const Sidebar = ({
             <button
                 onClick={() => setIsSidebarOpen((prev) => !prev)}
                 className={`absolute top-5 left-2 bg-gray-700 text-white p-1 rounded-xl hover:bg-gray-500 transition duration-300 z-20 ${
-                isSidebarOpen ? "rotate-180" : "" // z-index was z-8, increased for visibility if needed
+                isSidebarOpen ? "rotate-180" : ""
                 }`}
                 aria-label={isSidebarOpen ? "Close sidebar" : "Open sidebar"}
             >
@@ -118,7 +118,7 @@ export const Sidebar = ({
 
                 {/* Contact Info Submenu */}
                 <div
-                className="flex flex-col rounded-md transition" // Removed cursor-pointer from parent if only header toggles
+                className="flex flex-col rounded-md transition"
                 >
                 <div
                     className="flex items-center gap-2 p-2 hover:bg-gray-400 cursor-pointer"
@@ -145,16 +145,16 @@ export const Sidebar = ({
                     ></path>
                     </svg>
                     {isSidebarOpen && (
-                    <div className="flex items-center justify-between w-full"> {/* Use w-full to push arrow to the end */}
+                    <div className="flex items-center justify-between w-full">
                         <span className="text-lg">Contact Info</span>
                         <svg
-                        className={`size-6 transition-transform ${ // size-6 for arrow might be more proportional
+                        className={`size-6 transition-transform ${
                             isContactSubmenuOpen ? "rotate-90" : ""
                         }`}
                         data-slot="icon"
                         aria-hidden="true"
                         fill="none"
-                        strokeWidth={1.5} // Adjusted stroke for arrow
+                        strokeWidth={1.5}
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg"
@@ -170,7 +170,7 @@ export const Sidebar = ({
                 </div>
 
                 {/* Submenu Items */}
-                {isSidebarOpen && ( // Conditionally render UL only when sidebar is open for cleaner DOM when closed
+                {isSidebarOpen && (
                     <ul
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
                         isContactSubmenuOpen ? "max-h-60" : "max-h-0"
@@ -251,7 +251,7 @@ export const Sidebar = ({
                 {isSidebarOpen && (
                     <ul
                     className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                        isEducationSubmenuOpen ? "max-h-60" : "max-h-0" // Increased max-h to accommodate 3 items
+                        isEducationSubmenuOpen ? "max-h-60" : "max-h-0"
                     } pl-4`}
                     >
                     <li
